@@ -6,8 +6,8 @@
 ## Table of Contents
 
 1. [Project Overview](#-project-overview)
-2. [Quickstart](#quickstart)
-3. [Usage](#usage)
+2. [Quickstart](#-quick-start)
+3. [Usage](#%EF%B8%8F-usage)
 4. [Me](#me)
 
 ## 🧱 Project Overview
