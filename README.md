@@ -83,13 +83,13 @@ Follow these steps to get your Minecraft Forge server up and running:
 4. **Alternatively, run it via Docker Compose**
 
     ```
-    docker-compose up -d
+    docker compose up -d
     ```
     - You can customize environment variables in [Docker-compose file](./docker-compose.yml)
     
     - You can also stop the server with:
     ```
-    docker-compose down
+    docker compose down
     ```
 
 ## 🛠️ Usage
