@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-1. [Project Overview](#project-overview)
+1. [Project Overview](#-project-overview)
 2. [Quickstart](#quickstart)
 3. [Usage](#usage)
 4. [Me](#me)
