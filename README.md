@@ -126,6 +126,30 @@ environment:
 - All world files, configuration, and logs are stored in the `/minecraft` directory inside the container.
 - If you're using volumes (`mc-data`), data will persist across container rebuilds and restarts.
 
+### Access Minecraft Shell for Admin Usage:**
+
+```bash
+docker attach mc-server
+```
+
+- To access the Minecraft terminal, for example to change the gamemode or grant OP status to a user.
+
+> ⚠️ Important: Exit the console properly  
+> If you want to leave the container console **without stopping the server**:
+> - Do **not** press `Ctrl+C` — this will shut down the server.
+> - Instead, press `Ctrl+P` followed by `Ctrl+Q` — this will safely detach your session.
+
+### 🧑‍💻 Access the Container Shell
+
+```bash
+docker exec -it mc-server bash
+```
+
+This gives you access to the container's internal environment, allowing you to:
+- Inspect or edit server files (e.g. server.properties, logs, mod folders)
+- Install tools or run scripts inside the container
+- Manage configuration without restarting the containe
+
 ### Me
 
 - Jonathan Priebe - [LinkedIn](https://www.linkedin.com/in/jonathan-p-34471b1a5/)
