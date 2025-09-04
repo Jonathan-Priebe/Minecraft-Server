@@ -46,7 +46,7 @@ Before you can build and run this Minecraft Forge server, make sure you have the
 - 📁 **Mods directory (optional)**  
   If you plan to use mods, prepare a local folder (e.g. `./mods`) and place your `.jar` files there. These will be mounted into the container automatically.
 
-- 🧬 **Git (optional but recommended)**  
+- 🧬 **Git**  
   Useful for cloning this repository, managing version control, and contributing to the project.  
   [Install Git](https://git-scm.com/downloads)
 
@@ -70,27 +70,34 @@ Follow these steps to get your Minecraft Forge server up and running:
    - FORGE_VERSION – Forge build version (e.g. 58.1.0)
    - XMX and XMS – Java memory settings (default: 2G and 1G)
 
-3. **Run the container**
+### 1️⃣ Run the Container Manually
 
-    ```bash
-    docker run -d -it \
-    -p 8888:25565/udp \
-    -v mc-data:/minecraft \
-    -v mc-mods:/minecraft/mods \
-    mc-server:latest
-    ```
+  ```bash
+  docker run -d -it \
+  -p ${EXTERNAL_PORT}:25565/udp \
+  -e MC_VERSION=${MC_VERSION} \
+  -e FORGE_VERSION=${FORGE_VERSION} \
+  -e XMX=${XMX} \
+  -e XMS=${XMS} \
+  -v mc-data:/minecraft \
+  -v mc-mods:/minecraft/mods \
+  mc-server:latest
+  ```
 
-4. **Alternatively, run it via Docker Compose**
+### 2️⃣ Alternatively, Use Docker Compose (Recommended)
 
-    ```
-    docker compose up -d
-    ```
-    - You can customize environment variables in [Docker-compose file](./docker-compose.yml)
-    
-    - You can also stop the server with:
-    ```
-    docker compose down
-    ```
+  ```bash
+  docker compose up -d
+  ```
+  - Environment variables are loaded from your .env file
+
+  - You can customize Minecraft and Forge versions, memory settings, and exposed ports
+
+  - To stop the server:
+
+  ```bash
+  docker compose down
+  ```
 
 ## 🛠️ Usage
 
@@ -107,14 +114,14 @@ All key settings are controlled via environment variables and Docker volumes. Yo
 - `XMX`: Maximum Java heap size (default: `2G`)
 - `XMS`: Initial Java heap size (default: `1G`)
 
-Example in [Docker-Compose](./docker-compose.yml):
-```yaml
-environment:
-  MC_VERSION: "1.21.8"
-  FORGE_VERSION: "58.1.0"
-  XMX: "2G"
-  XMS: "1G"
-```
+Example in [Docker-Compose](./docker-compose.yml)
+
+> ℹ️ To get started, copy the [example environment file](./example.env):
+> ```bash
+> cp example.env .env
+> ```
+> Then adjust the values to match your desired Minecraft and Forge setup.
+
 
 ### Manage Mods
 
