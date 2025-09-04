@@ -70,7 +70,9 @@ Follow these steps to get your Minecraft Forge server up and running:
    - FORGE_VERSION – Forge build version (e.g. 58.1.0)
    - XMX and XMS – Java memory settings (default: 2G and 1G)
 
-### 1️⃣ Run the Container Manually
+3. **Run Container**
+
+### Option 1️⃣ Run the Container Manually
 
   ```bash
   docker run -d -it \
@@ -84,7 +86,7 @@ Follow these steps to get your Minecraft Forge server up and running:
   mc-server:latest
   ```
 
-### 2️⃣ Alternatively, Use Docker Compose (Recommended)
+### Option 2️⃣ Alternatively, Use Docker Compose (Recommended)
 
   ```bash
   docker compose up -d
