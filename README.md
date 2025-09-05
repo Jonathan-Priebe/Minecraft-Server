@@ -60,6 +60,25 @@ Follow these steps to get your Minecraft Forge server up and running:
     cd Minecraft-Server
     ```
 
+### 🔧 Configuration Overview
+
+All key settings are controlled via environment variables and Docker volumes. You can adjust them in the `docker-compose.yml` file or via CLI when running the container manually.
+
+#### Environment Variables
+
+- `MC_VERSION`: Defines the Minecraft version (e.g. `1.21.8`)
+- `FORGE_VERSION`: Specifies the Forge build version (e.g. `58.1.0`)
+- `XMX`: Maximum Java heap size (default: `2G`)
+- `XMS`: Initial Java heap size (default: `1G`)
+
+Example in [Docker-Compose](./docker-compose.yml)
+
+> ℹ️ To get started, copy the [example environment file](./example.env):
+> ```bash
+> cp example.env .env
+> ```
+> Then adjust the values to match your desired Minecraft and Forge setup.
+
 2. **Build the Docker image**
 
    ```bash
@@ -104,26 +123,6 @@ Follow these steps to get your Minecraft Forge server up and running:
 ## 🛠️ Usage
 
 This section explains how to configure and manage your Minecraft Forge server using the provided Docker setup.
-
-### 🔧 Configuration Overview
-
-All key settings are controlled via environment variables and Docker volumes. You can adjust them in the `docker-compose.yml` file or via CLI when running the container manually.
-
-#### Environment Variables
-
-- `MC_VERSION`: Defines the Minecraft version (e.g. `1.21.8`)
-- `FORGE_VERSION`: Specifies the Forge build version (e.g. `58.1.0`)
-- `XMX`: Maximum Java heap size (default: `2G`)
-- `XMS`: Initial Java heap size (default: `1G`)
-
-Example in [Docker-Compose](./docker-compose.yml)
-
-> ℹ️ To get started, copy the [example environment file](./example.env):
-> ```bash
-> cp example.env .env
-> ```
-> Then adjust the values to match your desired Minecraft and Forge setup.
-
 
 ### Manage Mods
 
