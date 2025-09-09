@@ -1,0 +1,20 @@
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+
+#Env files
+.env
+
+#Logs-
+*.log
+logs/
+
+#Minecraft-Data
+/mc-data/*
+!/mc-data/.gitkeep
+
+#Docker
+*.pid

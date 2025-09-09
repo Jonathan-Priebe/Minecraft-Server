@@ -1,0 +1,23 @@
+
+services:
+  forge-server:
+    build: .
+    container_name: mc-server
+    ports:
+      - "${EXTERNAL_PORT}:25565"
+    environment:
+      MC_VERSION: "${MC_VERSION}"
+      FORGE_VERSION: "${FORGE_VERSION}"
+      XMX: "${XMX}"
+      XMS: "${XMS}"
+    volumes:
+      - mc-data:/minecraft
+      - mc-mods:/minecraft/mods
+    stdin_open: true
+    tty: true
+    restart: on-failure:2
+
+volumes:
+  mc-data: {}
+  mc-mods: {}
+
